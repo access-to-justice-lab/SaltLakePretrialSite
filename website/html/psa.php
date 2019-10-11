@@ -35,33 +35,19 @@
     }
     </script>
     	<script>
-	$( function() {
-    //NCA Slider
-		$( "#slider-NCA" ).slider({
-			range: "max",
-			min: 1,
-			max: 6,
-			value: 1,
-			slide: function( event, ui ) {
-				$( "#NCAamount" ).val( ui.value );
-			}
-		});
-		$( "#NCAamount" ).val( $( "#slider-NCA" ).slider( "value" ) );
-  } );
   //FTA Scale Slider
   $( function() {
-		$( "#slider-FTA-Scale" ).slider({
+		$( "#slider-ageatarrest" ).slider({
 			range: "max",
-			min: 1,
-			max: 6,
+			min: 10,
+			max: 100,
 			value: 1,
 			slide: function( event, ui ) {
-				$( "#FTAamount" ).val( ui.value );
+				$( "#ageatarrest" ).val( ui.value );
 			}
 		});
-		$( "#FTAamount" ).val( $( "#slider-FTA-Scale" ).slider( "value" ) );
+		$( "#ageatarrest" ).val( $( "#slider-ageatarrest" ).slider( "value" ) );
   } );
-
 
 	</script>
     <div class="container">
@@ -78,38 +64,73 @@
           </h4>
           <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
-            <div class='row'>
-            <div class='col-md-6'>
-                <h6 class="my-0">New Criminal Activity Scale</h6>
-
-            </div>
-            <div class='col-md-6'>
-                <p>
-                    <input type="text" id="NCAamount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-                </p>
-                <div id="slider-NCA"></div>
-            </div>
-            </div>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div class = 'row'>
               <div class = 'col-md-6'>
-                <h6 class="my-0">Failure to Appear Scale</h6>
+                <h6 class="my-0">Age At Arrest</h6>
               </div>
               <div class='col-md-6'>
                 <p>
-                    <input type="text" id="FTAamount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                    <input type="text" id="ageatarrest" style="border:0; color:#f6931f; font-weight:bold;">
                 </p>
-                <div id="slider-FTA-Scale"></div>
+                <div id="slider-ageatarrest"></div>
             </div>
             </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <h6 class="my-0">New Violent Criminal Activity Flag</h6>
+                <h6 class="my-0">Current Violent Offense</h6>
               </div>
-              <input type = 'radio' name='currentviolentoffense' value='yes'>Yes
-              <input type = 'radio' name='currentviolentoffense' value='no'>No
+              <input type = 'radio' name='currentviolentoffense' value='yes' id='cvoyes'><label for='cvoyes'>Yes</label>
+              <input type = 'radio' name='currentviolentoffense' value='no' id='cvono'><label for='cvono'>No</label>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Pending Charge at the Time of the Offense</h6>
+              </div>
+              <input type = 'radio' name='pendngcharge' value='yes' id='pendngchargeyes'><label for='pendngchargeyes'>Yes</label>
+              <input type = 'radio' name='pendngcharge' value='no' id='pendngchargeno'><label for='pendngchargeno'>No</label>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Prior Misdemeanor Conviction</h6>
+              </div>
+              <input type = 'radio' name='priormisdmeanor' value='yes' id='priormisdmeanoryes'><label for='priormisdmeanoryes'>Yes</label>
+              <input type = 'radio' name='priormisdmeanor' value='no' id='priormisdmeanorno'><label for='priormisdmeanorno'>No</label>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Prior Felony Conviction</h6>
+              </div>
+              <input type = 'radio' name='priorfelony' value='yes' id='priorfelonyyes'><label for='priorfelonyyes'>Yes</label>
+              <input type = 'radio' name='priorfelony' value='no' id='priorfelonyno'><label for='priorfelonyno'>No</label>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Prior Violent Offense</h6>
+              </div>
+              <input type = 'radio' name='priorviolentoffense' value='yes' id='priorviolentoffenseyes'><label for='priorviolentoffenseyes'>Yes</label>
+              <input type = 'radio' name='priorviolentoffense' value='no' id='priorviolentoffenseno'><label for='priorviolentoffenseno'>No</label>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Prior FTA in Past 2 Years</h6>
+              </div>
+              <input type = 'radio' name='ftalessthan2yearsold' value='yes' id='ftalessthan2yearsoldyes'><label for='ftalessthan2yearsoldyes'>Yes</label>
+              <input type = 'radio' name='ftalessthan2yearsold' value='no' id='ftalessthan2yearsoldno'><label for='ftalessthan2yearsoldno'>No</label>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Prior FTA Older than 2 Years</h6>
+              </div>
+              <input type = 'radio' name='fta2yearsold' value='yes' id='fta2yearsoldyes'><label for='fta2yearsoldyes'>Yes</label>
+              <input type = 'radio' name='fta2yearsold' value='no' id='fta2yearsoldno'><label for='fta2yearsoldno'>No</label>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Prior Sentence to Incarceration</h6>
+              </div>
+              <input type = 'radio' name='priorsentence' value='yes' id='priorsentenceyes'><label for='priorsentenceyes'>Yes</label>
+              <input type = 'radio' name='priorsentence' value='no' id='priorsentenceno'><label for='priorsentenceno'>No</label>
             </li>
           </ul>
         </div>
@@ -149,9 +170,9 @@
                 <h6>Do you have any friends, family, or other people close to you who also live in Salt Lake City or Salt Lake County?</h6>
               </div>
               <div class='col-md-6'>
-                <input type = 'radio' name='currentviolentoffense' value='yes'>Yes
+                <input type = 'radio' name='family' value='yes' id='familyyes'><label for='familyyes'>Yes</label>
                 <br>
-                <input type = 'radio' name='currentviolentoffense' value='no'>No
+                <input type = 'radio' name='family' value='no' id='familyno'><label for='familyno'>No</label>
               </div>
             </div>
             </li>
@@ -186,9 +207,9 @@
                 <h6 class="my-0">Are you currently employed?</h6>
               </div>
               <div class='col-md-6'>
-              <input type = 'radio' name='currentviolentoffense' value='yes'>Yes
+              <input type = 'radio' name='currentlyemployed' value='yes' id='currentlyemployedyes'><label for ='currentlyemployedyes'>Yes</label>
               <br>
-              <input type = 'radio' name='currentviolentoffense' value='no'>No
+              <input type = 'radio' name='currentlyemployed' value='no' id='currentlyemployedno'><label for='currentlyemployedno'>No</label>
               </div>
               </div>
             </li>
@@ -221,11 +242,11 @@
                 <h6 class="my-0">Are you working full-time, part-time, or in some other capacity?</h6>
               </div>
               <div class='col-md-6'>
-              <input type = 'radio' name='currentviolentoffense' value='fulltime'>Full-Time
+              <input type = 'radio' name='working' value='fulltime' id='workingft'><label for='workingft'>Full-Time</label>
               <br>
-              <input type = 'radio' name='currentviolentoffense' value='parttime'>Part-Time
+              <input type = 'radio' name='working' value='parttime' id='workingpt'><label for='workingpt'>Part-Time</label>
               <br>
-              <input type = 'radio' name='currentviolentoffense' value='othercapcity'>Other Capacity
+              <input type = 'radio' name='working' value='othercapcity' id='workingoc'><label for='workingoc'>Other Capacity</label>
                 </div>
                 </div>
             </li>
