@@ -2,6 +2,7 @@ FROM php:7.2-apache
 
 RUN apt-get update -y
 RUN apt-get upgrade -y
+RUN apt install unattended-upgrades -y
 RUN apt-get install certbot python-certbot-apache -y
 
 #docker build -t slc_server .
